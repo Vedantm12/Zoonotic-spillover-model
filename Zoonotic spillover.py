@@ -20,9 +20,8 @@ from xgboost import XGBClassifier
 from lightgbm import LGBMClassifier
 
 
-# ---------------------------------------------------------
 # 1. Pipeline Setup & Model Definitions
-# ---------------------------------------------------------
+
 def build_model_zoo(scale_pos_weight_val=1.0, random_state=42):
     """
     Constructs an ensemble of ML classifiers configured for 
@@ -93,9 +92,8 @@ def build_model_zoo(scale_pos_weight_val=1.0, random_state=42):
     return models
 
 
-# ---------------------------------------------------------
 # 2. Evaluation & Benchmarking Engine
-# ---------------------------------------------------------
+
 def evaluate_models(X, y, n_splits=5, random_state=42):
     """
     Runs Stratified K-Fold CV evaluating ROC-AUC, PR-AUC, and Brier Score.
@@ -155,9 +153,9 @@ def evaluate_models(X, y, n_splits=5, random_state=42):
     return pd.DataFrame(results)
 
 
-# ---------------------------------------------------------
+
+
 # 3. Example Execution (Synthetic Spillover Data)
-# ---------------------------------------------------------
 if __name__ == "__main__":
     from sklearn.datasets import make_classification
 
